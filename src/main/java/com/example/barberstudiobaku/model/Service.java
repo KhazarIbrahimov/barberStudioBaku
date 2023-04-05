@@ -47,4 +47,4 @@ import jakarta.persistence.*;
             this.price = price;
         }
 
-}
+    }

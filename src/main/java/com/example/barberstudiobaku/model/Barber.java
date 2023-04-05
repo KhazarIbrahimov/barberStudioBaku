@@ -13,7 +13,11 @@ public class Barber {
             this.phoneNumber = phoneNumber;
         }
 
-        public int getId() {
+    public Barber() {
+
+    }
+
+    public int getId() {
             return id;
         }
 
