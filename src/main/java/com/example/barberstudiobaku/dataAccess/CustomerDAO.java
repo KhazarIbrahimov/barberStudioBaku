@@ -29,7 +29,7 @@ public class CustomerDAO {
         jdbcTemplate.update(sql, customer.getFirstName(), customer.getEmail(), customer.getPhone());
     }
 
-    public void updateCustomer(Customer customer) {
+    public void updateCustomer(int id, Customer customer) {
         String sql = "UPDATE customers SET name = ?, email = ?, phone = ? WHERE id = ?";
         jdbcTemplate.update(sql, customer.getFirstName(), customer.getEmail(), customer.getPhone(), customer.getId());
     }
@@ -37,6 +37,12 @@ public class CustomerDAO {
     public void deleteCustomer(int id) {
         String sql = "DELETE FROM customers WHERE id = ?";
         jdbcTemplate.update(sql, id);
+    }
+
+    public int createCustomer(Customer customer) {
+        String sql = "INSERT INTO customers (name, email, phone) VALUES (?, ?, ?)";
+        jdbcTemplate.update(sql, customer.getFirstName(), customer.getEmail(), customer.getPhone());
+        return jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
     }
 }
 
