@@ -14,6 +14,7 @@ import jakarta.persistence.*;
 
         private double price;
 
+
         public Service() {
         }
 

@@ -3,7 +3,7 @@ package com.example.barberstudiobaku.model;
 import java.time.LocalDateTime;
 
 public class Appointment {
-    private int id;
+    private long id;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
     private Customer customer;
@@ -12,7 +12,7 @@ public class Appointment {
     private Service service ;
 
 
-    public Appointment(int id, LocalDateTime startDateTime, LocalDateTime endDateTime, Customer customer, Barber barber) {
+    public Appointment(long id, LocalDateTime startDateTime, LocalDateTime endDateTime, Customer customer, Barber barber) {
         this.id = id;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
@@ -20,8 +20,12 @@ public class Appointment {
         this.barber = barber;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Appointment() {
+
+    }
+
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
 
     public LocalDateTime getStartDateTime() { return startDateTime; }
     public void setStartDateTime(LocalDateTime startDateTime) { this.startDateTime = startDateTime; }

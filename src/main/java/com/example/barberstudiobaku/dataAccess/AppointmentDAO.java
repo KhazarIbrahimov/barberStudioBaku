@@ -1,6 +1,7 @@
 package com.example.barberstudiobaku.dataAccess;
 
 
+import com.example.barberstudiobaku.dto.AppointmentDTO;
 import com.example.barberstudiobaku.model.Appointment;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,12 +21,12 @@ public class AppointmentDAO {
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class));
     }
 
-    public Appointment getAppointmentById(int id) {
+    public Appointment getAppointmentById(long id) {
         String sql = "SELECT * FROM appointments WHERE id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<>(Appointment.class));
     }
 
-    public void addAppointment(Appointment appointment) {
+    public void addAppointment(AppointmentDTO appointment) {
         String sql = "INSERT INTO appointments (barber_id, customer_id, service_id, date_time) VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(sql, appointment.getBarber(), appointment.getCustomer(), appointment.getService(), appointment.getStartDateTime());
     }
