@@ -1,5 +1,6 @@
 package com.example.barberstudiobaku.controller;
 
+import com.example.barberstudiobaku.business.PaymentRequest;
 import com.example.barberstudiobaku.business.PaymentService;
 import com.example.barberstudiobaku.model.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
