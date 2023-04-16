@@ -33,7 +33,7 @@ public class BarberMapper implements RowMapper<Barber> {
             Barber barber = new Barber();
             barber.setId(rs.getInt("id"));
             barber.setName(rs.getString("name"));
-            barber.setPhoneNumber(rs.getString("phone"));
+            barber.setPhoneNumber(rs.getString("phoneNumber"));
             barber.setEmail(rs.getString("email"));
             return barber;
         }

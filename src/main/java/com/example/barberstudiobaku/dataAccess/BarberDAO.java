@@ -6,6 +6,7 @@ import com.example.barberstudiobaku.model.Barber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class BarberDAO {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @GetMapping("/barbers")
+
 
     public List<Barber> getAllBarbers() {
         String query = "SELECT * FROM barbers";

@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/payments")
-public class PaymentController {
+public class PaymentRestController {
     private PaymentService paymentService;
 
     @Autowired
-    public PaymentController(PaymentService paymentService) {
+    public PaymentRestController(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
 
